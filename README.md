@@ -11,3 +11,7 @@
 ## Website
 
 https://malakhavam.github.io/Maryia-password-generator/
+
+## Screenshot
+
+![Mockup-image](assets/malakhavam.github.io_Maryia-password-generator_)
