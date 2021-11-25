@@ -34,7 +34,7 @@ function generatePassword() {
 
   function passwordLength() {
 
-    // Window prompts
+// Window prompts
 
     passLength = prompt("What would you like to be your password lenght? It must be between 8 and 128 characters.");
 
@@ -50,15 +50,18 @@ function generatePassword() {
   var number = confirm("Would you like to have numbers in your password?");
    
    if (number === true) {
+  // pick a random character from numbers array and put it into prePassword   
   var minNumbers = numbers[Math.floor(Math.random() * numbers.length)];
 
   prePassword.push(minNumbers);
-    
+  // MasrerPassword array to hold approved characters  
   MasterPassword = MasterPassword.concat(numbers)
-  minimumCount += 1;
+
+  // To make sure user chose at least one type of characters
+
+  minimumCount++;
   }
 
-  
 
   console.log(minimumCount)
   console.log(minNumbers)
@@ -71,7 +74,7 @@ function generatePassword() {
       prePassword.push(minLowerCases);
     
       MasterPassword = MasterPassword.concat(lowerCases)
-      minimumCount++;
+      minimumCount += 1;
   
     }
 
@@ -104,10 +107,10 @@ function generatePassword() {
       minimumCount += 1;
 
     }
-
    
     console.log(minSpecialCharacters)
 
+    // If no characters were chosen run passwordLenth function again
     if (minimumCount === 0){
       alert("Please choose at least one group of the parameters")
       return passwordLength()
@@ -116,16 +119,19 @@ function generatePassword() {
   console.log(prePassword)
   console.log(MasterPassword)
 
- // random characters in the password
+ // Random characters 
 
  var difference = passLength-minimumCount
 
  console.log(difference)
 
  for (i = 0; i < difference; i++) {
+ 
+// Math metod to chose random characters after all selections
   var randomPassword = MasterPassword[Math.floor(Math.random() * MasterPassword.length)];
   prePassword.push(randomPassword);
 
+// To return a new string by concatenating all previously chosen elements
   var newRandomPassword = prePassword.join("");
   
  }
