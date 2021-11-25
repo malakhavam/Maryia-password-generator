@@ -1,19 +1,15 @@
 // Assignment code here
 var minimumCount = 0;
-var passLength = 0;
-var minNumbers = "";
-var minLowerCases = "";
-var minUpperCases = "";
-var minSpecialCharacters = "";
-var randomPassword = "";
+var passLength = 0
 
-var specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
+var numbers = "1234567890".split("");
 var lowerCases = "qwertyuiopasdfghjklzxcvbnm".split("");
 var upperCases = "QWERTYUIOPASDFGHJKLZXCVBNM".split("");
-var numbers = "1234567890".split("");
+var specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
 
 // Array to hold characters
 var prePassword = [];
+// Master array for random password
 var MasterPassword = [];
 
 // Get references to the #generate element
@@ -51,42 +47,47 @@ function generatePassword() {
   }
     passwordLength(); 
   
-  var numbers = confirm("Would you like to have numbers in your password?");
+  var number = confirm("Would you like to have numbers in your password?");
    
-   if (numbers === true) {
-   var minNumbers = numbers[Math.floor(Math.random() * numbers.length)];
+   if (number === true) {
+  var minNumbers = numbers[Math.floor(Math.random() * numbers.length)];
 
-    prePassword.push(minNumbers);
+  prePassword.push(minNumbers);
     
-    MasterPassword = MasterPassword.concat(numbers)
-    minimumCount++;
+  MasterPassword = MasterPassword.concat(numbers)
+  minimumCount++;
   }
+
   
+
+  console.log(minimumCount)
   console.log(minNumbers)
     
-    var lowerCases = confirm("Would you like to have lower case letters in your password?");
+    var lowerCasesLet = confirm("Would you like to have lower case letters in your password?");
 
-    if (lowerCases === true) {
+    if (lowerCasesLet === true) {
      var minLowerCases = lowerCases[Math.floor(Math.random() * lowerCases.length)];
 
       prePassword.push(minLowerCases);
     
       MasterPassword = MasterPassword.concat(lowerCases)
-      minimumCount = minimumCount+1;
+      minimumCount += 1;
   
     }
 
+    
+    console.log(minimumCount)
     console.log(minLowerCases)
   
-    var upperCases = confirm("Would you like to have upper case letters in your password?");
+    var upperCasesLet = confirm("Would you like to have upper case letters in your password?");
 
-    if (upperCases === true) {
+    if (upperCasesLet === true) {
      var minUpperCases = upperCases[Math.floor(Math.random() * upperCases.length)];
 
       prePassword.push(minUpperCases);
     
       MasterPassword = MasterPassword.concat(lowerCases)
-      minimumCount = minimumCount+1;
+      minimumCount += 1;
        
     }
 
@@ -100,10 +101,11 @@ function generatePassword() {
       prePassword.push(minSpecialCharacters);
     
       MasterPassword = MasterPassword.concat(specialCharacters)
-      minimumCount = minimumCount+1;
+      minimumCount += 1;
 
     }
 
+   
     console.log(minSpecialCharacters)
 
     if (minimumCount === 0){
