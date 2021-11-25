@@ -55,7 +55,7 @@ function generatePassword() {
   prePassword.push(minNumbers);
     
   MasterPassword = MasterPassword.concat(numbers)
-  minimumCount++;
+  minimumCount += 1;
   }
 
   
@@ -66,12 +66,12 @@ function generatePassword() {
     var lowerCasesLet = confirm("Would you like to have lower case letters in your password?");
 
     if (lowerCasesLet === true) {
-     var minLowerCases = lowerCases[Math.floor(Math.random() * lowerCases.length)];
+     var minLowerCases = upperCases[Math.floor(Math.random() * lowerCases.length)];
 
       prePassword.push(minLowerCases);
     
       MasterPassword = MasterPassword.concat(lowerCases)
-      minimumCount += 1;
+      minimumCount++;
   
     }
 
@@ -86,7 +86,7 @@ function generatePassword() {
 
       prePassword.push(minUpperCases);
     
-      MasterPassword = MasterPassword.concat(lowerCases)
+      MasterPassword = MasterPassword.concat(upperCases)
       minimumCount += 1;
        
     }
